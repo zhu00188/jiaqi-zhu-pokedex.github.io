@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Viga&display=swap');
+
+body {
+    background-color: white;
+    font-family: "Viga", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.card {
+    border-style: dashed solid;
+}
+
+.card:hover {
+    transform: scale(1.1); /* Increase size on hover */
+    transition: transform 0.3s ease; /* Add smooth transition */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+
+.square-container {
+    width: 100%;
+    height: 0;
+    padding-top: 100%; /* Maintain aspect ratio (1:1 for square) */
+    position: relative;
+    overflow: hidden;
+}
+
+
+.square-container img {
+    position: absolute;
+    top: 50%; /* Move image down by 50% of container height */
+    left: 50%; /* Move image right by 50% of container width */
+    transform: translate(-50%, -50%); /* Center the image */
+    width: calc(100% - 40px); /* Subtract 40px for 20px padding on each side */
+    height: auto;
+    max-width: calc(100% - 40px); /* Ensure image doesn't exceed container size */
+    max-height: calc(100% - 40px); /* Ensure image doesn't exceed container size */
+}
+
+.modal-dialog {
+    max-width: 70%; /* Set the maximum width of the modal */
+    margin: 1.75rem auto; /* Center the modal horizontally and provide some margin from top */
+}
+
+.modal-content {
+    height: 90vh; /* Set the height of the modal content */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds viewport height */
+}
+
+.caught-pokemon {
+    position: relative;
+}
+
+.caught-pokemon::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 130, 76, 0.8); /* Green with 50% transparency */
+    z-index: 1; /* Ensure the green layer is above the card */
+    content: 'CAUGHT';
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+}
